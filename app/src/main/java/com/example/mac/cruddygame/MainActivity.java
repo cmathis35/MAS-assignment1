@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView enemyhealth =  findViewById(R.id.enemyhealth);
         final ImageButton hitbutton =  findViewById(R.id.hitButton);
         final TextView cash = findViewById(R.id.cash);
-        final ImageButton marketbutton = findViewById(R.id.marketbutton);
+        //final ImageButton marketbutton = findViewById(R.id.marketbutton);
         final TextView health = findViewById(R.id.hp);
         final ImageButton innbutton = findViewById(R.id.innButton);
         final TextView storybox = findViewById(R.id.storybox);
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                 health.setVisibility(View.GONE);
                 cash.setVisibility(View.GONE);
                 level.setVisibility(View.GONE);
-                marketbutton.setVisibility(View.GONE);
+                //marketbutton.setVisibility(View.GONE);
                 savebutton.setVisibility(View.GONE);
                 hutbutton.setVisibility(View.GONE);
                 savestate.setVisibility(View.VISIBLE);
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 health.setVisibility(View.VISIBLE);
                 innbutton.setVisibility(View.VISIBLE);
                 hutbutton.setVisibility(View.VISIBLE);
-                marketbutton.setVisibility(View.VISIBLE);
+                //marketbutton.setVisibility(View.VISIBLE);
 
             }
         });
@@ -264,7 +264,7 @@ public class MainActivity extends AppCompatActivity {
                 health.setVisibility(View.GONE);
                 cash.setVisibility(View.GONE);
                 level.setVisibility(View.GONE);
-                marketbutton.setVisibility(View.GONE);
+                //marketbutton.setVisibility(View.GONE);
                 savebutton.setVisibility(View.GONE);
                 hutbutton.setVisibility(View.GONE);
 
@@ -286,13 +286,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        marketbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                screen.setDisplayedChild(screens.get("shop"));
-
-            }
-        });
+        //marketbutton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                screen.setDisplayedChild(screens.get("shop"));
+//
+//            }
+//        });
 
         weaponshop.setOnClickListener(new View.OnClickListener() {
             @Override
