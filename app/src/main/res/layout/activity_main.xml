@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+    <ViewFlipper
+        android:id="@+id/screen"
+        android:layout_width="365dp"
+        android:layout_height="568dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:animateLayoutChanges="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!-- Code for the main screen -->
+
+        <!--<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--xmlns:tools="http://schemas.android.com/tools"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="#000000"-->
+            <!--tools:context="com.example.mac.cruddygame.MainActivity">-->
+
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Bat"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="16dp"-->
+                <!--tools:layout_editor_absoluteY="230dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView5"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="short sword"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="145dp"-->
+                <!--tools:layout_editor_absoluteY="230dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView6"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="long sword"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="274dp"-->
+                <!--tools:layout_editor_absoluteY="230dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView7"-->
+                <!--X="16dp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Halberd"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absolute-->
+                <!--tools:layout_editor_absoluteX="16dp"-->
+                <!--tools:layout_editor_absoluteY="333dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView8"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Fire Sword"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="149dp"-->
+                <!--tools:layout_editor_absoluteY="333dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView9"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="1 ton mallet"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="274dp"-->
+                <!--tools:layout_editor_absoluteY="333dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView10"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Scythe"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="31dp"-->
+                <!--tools:layout_editor_absoluteY="452dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView11"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Death Mace"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="136dp"-->
+                <!--tools:layout_editor_absoluteY="452dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView12"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Obscuris Nocturna"-->
+                <!--android:textColor="#ffffff"-->
+                <!--tools:layout_editor_absoluteX="242dp"-->
+                <!--tools:layout_editor_absoluteY="452dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView13"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="TextView"-->
+                <!--tools:layout_editor_absoluteX="16dp"-->
+                <!--tools:layout_editor_absoluteY="275dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView14"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="TextView"-->
+                <!--tools:layout_editor_absoluteX="153dp"-->
+                <!--tools:layout_editor_absoluteY="275dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView15"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="TextView"-->
+                <!--tools:layout_editor_absoluteX="274dp"-->
+                <!--tools:layout_editor_absoluteY="275dp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textView16"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="TextView"-->
+                <!--tools:layout_editor_absoluteX="16dp"-->
+                <!--tools:layout_editor_absoluteY="372dp" />-->
+
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:visibility="visible"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+            <ImageView
+                android:id="@+id/character"
+                android:layout_width="163dp"
+                android:layout_height="174dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:cropToPadding="false"
+                android:src="@drawable/character"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/hp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="textview"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toStartOf="@+id/character"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cash" />
+
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="67dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Level 1"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/character"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Level 1" />
+
+
+            <ImageButton
+                android:id="@+id/innButton"
+                android:layout_width="157dp"
+                android:layout_height="93dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="172dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toStartOf="@+id/exploreButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/inn" />
+
+            <ImageButton
+                android:id="@+id/exploreButton"
+                android:layout_width="187dp"
+                android:layout_height="83dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                android:src="@drawable/explore"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/character" />
+
+            <ImageButton
+                android:id="@+id/marketbutton"
+                android:layout_width="175dp"
+                android:layout_height="76dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/exploreButton"
+                app:srcCompat="@drawable/market" />
+
+            <ImageButton
+                android:id="@+id/hutbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/innButton"
+                app:srcCompat="@drawable/hut" />
+
+            <TextView
+                android:id="@+id/cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toStartOf="@+id/character"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/level" />
+
+            <ImageButton
+                android:id="@+id/saveButton"
+                android:layout_width="197dp"
+                android:layout_height="96dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/savebutton" />
+
+
+            <TextView
+                android:id="@+id/saveState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Game Saved"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/goBack"
+                android:layout_width="193dp"
+                android:layout_height="95dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/goback" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!-- code for the story progress -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+            <TextView
+                android:id="@+id/storybox"
+                android:layout_width="335dp"
+                android:layout_height="498dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text=""
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/storybutton"
+                android:layout_width="93dp"
+                android:layout_height="75dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/storyprogress" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- code for exploring and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+            <ImageButton
+                android:id="@+id/forestbutton"
+                android:layout_width="183dp"
+                android:layout_height="99dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/forest" />
+
+
+            <ImageButton
+                android:id="@+id/goBackToMain"
+                android:layout_width="193dp"
+                android:layout_height="95dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/goback" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!-- code for fighting and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:visibility="visible"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+            <TextView
+                android:id="@+id/cash2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textColor="#ffffff"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/level2" />
+
+
+            <TextView
+                android:id="@+id/hp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="textview"
+                android:textColor="#ffffff"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cash2" />
+
+            <TextView
+                android:id="@+id/level2"
+                android:layout_width="67dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Level 1"
+                android:textColor="#ffffff"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Level 1" />
+
+            <ImageButton
+                android:id="@+id/hitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/hit" />
+
+            <TextView
+                android:id="@+id/enemyhealth"
+                android:layout_width="78dp"
+                android:layout_height="41dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="36dp"
+                android:background="#000000"
+                android:textColor="#ffffff"
+
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="5" />
+
+            <TextView
+                android:id="@+id/enemyname"
+                android:layout_width="72dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                android:textColor="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/goBackToExplore"
+                android:layout_width="193dp"
+                android:layout_height="95dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="#000000"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/goback" />
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!-- code for character and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!-- code for stats and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!-- code for shop select and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+            <ImageButton
+                android:id="@+id/weaponshop"
+                android:layout_width="wrap_content"
+                android:layout_height="102dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="#000000"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/weapons" />
+
+            <ImageButton
+                android:id="@+id/armorshop"
+                android:layout_width="255dp"
+                android:layout_height="105dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weaponshop"
+                app:srcCompat="@drawable/armor" />
+
+            <ImageButton
+                android:id="@+id/spellshop"
+                android:layout_width="255dp"
+                android:layout_height="110dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/armorshop"
+                app:srcCompat="@drawable/spells" />
+
+            <ImageButton
+                android:id="@+id/trainingshop"
+                android:layout_width="253dp"
+                android:layout_height="107dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spellshop"
+                app:srcCompat="@drawable/train" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+        <!-- code for shop1 and such -->
+
+
+        <!-- code for shop2 and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- code for shop3 and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <!-- code for shop4 and such -->
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            tools:context="com.example.mac.cruddygame.MainActivity">
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </ViewFlipper>
+
+
+    />
+
+
+</android.support.constraint.ConstraintLayout>
