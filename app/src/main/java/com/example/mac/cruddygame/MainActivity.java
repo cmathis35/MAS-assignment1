@@ -21,6 +21,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
@@ -169,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
 
                 //JSON PARSING DONE HERE
                 try {
+                    DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+                    db.child("users").child((String) getIntent().getSerializableExtra("userID")).setValue(c);
+
                     FileOutputStream fos = openFileOutput("savefile.txt", Context.MODE_PRIVATE);
                     GsonBuilder gsonBuilder = new GsonBuilder();
                     Gson gson = new Gson();

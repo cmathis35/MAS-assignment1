@@ -20,8 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -35,12 +38,14 @@ public class startscreen extends AppCompatActivity {
     MediaPlayer mediaPlayer;
     private FirebaseAuth mAuth;
     private static final String TAG = "EmailPassword";
+    private String userID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        userID = currentUser.getUid();
         setContentView(R.layout.activity_startscreen);
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.gangstasparadise);
 
@@ -82,7 +87,7 @@ public class startscreen extends AppCompatActivity {
                             myRef.setValue("Hello, World!");
                             Intent intent = new Intent(startscreen.this, MainActivity.class);
                             intent.putExtra("character", c);
-                            intent.putExtra("auth", mAuth.getCurrentUser());
+                            intent.putExtra("userID", userID);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -104,10 +109,12 @@ public class startscreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("users");
                             Intent intent = new Intent(startscreen.this, MainActivity.class);
-                            character c = new character(15, 0, 0, 1, 1, 0);
+                            character c = new character(15, 1, 1, 1, 1, 1);
                             intent.putExtra("character", c);
-                            intent.putExtra("auth", mAuth.getCurrentUser());
+                            intent.putExtra("userID", userID);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.
