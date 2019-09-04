@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#000000"
     android:layout_height="match_parent"
+    android:background="#555555"
     tools:context="com.example.mac.cruddygame.startscreen">
 
     <ImageButton
         android:id="@+id/newbutton"
         android:layout_width="227dp"
         android:layout_height="135dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="120dp"
+        android:layout_marginEnd="8dp"
         android:background="#000000"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,9 +26,9 @@
         android:id="@+id/loadbutton"
         android:layout_width="193dp"
         android:layout_height="203dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
         android:background="#000000"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,4 +36,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newbutton"
         app:srcCompat="@drawable/load" />
+
+    <EditText
+        android:id="@+id/emailinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loadbutton" />
+
+    <EditText
+        android:id="@+id/passwordinput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Password"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailinput" />
+
 </android.support.constraint.ConstraintLayout>

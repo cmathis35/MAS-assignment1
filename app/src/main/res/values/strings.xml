@@ -63,5 +63,7 @@ I stood up and shook myself off, while I was shaking myself off she pointed a fi
     <string name="story8">
         "Finish your current quest"
     </string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    <string name="emailHint">Email</string>
 
 </resources>

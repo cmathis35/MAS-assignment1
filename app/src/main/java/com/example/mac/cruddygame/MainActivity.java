@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.Image;
 import android.media.MediaPlayer;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +16,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
@@ -33,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private enemy e;
     private int gobackto = 0;
     Map<String, Integer> screens = new HashMap<String, Integer>();
+    private FirebaseAuth mAuth;
+    private static final String TAG = "EmailPassword";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
         screens.put("spellshop", 9);
         screens.put("trainingshop", 10);
 
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
 
         final character c = (character) getIntent().getSerializableExtra("character");
 
@@ -61,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
         final ImageView character = findViewById(R.id.character);
         final TextView level = findViewById(R.id.level);
         final TextView savestate = findViewById(R.id.saveState);
-        final ImageButton goback =  findViewById(R.id.goBack);
+        final ImageButton goback = findViewById(R.id.goBack);
         final ImageButton gobacktoexplore = findViewById(R.id.goBackToExplore);
         final ImageButton gobacktomain = findViewById(R.id.goBackToMain);
-        final TextView enemyhealth =  findViewById(R.id.enemyhealth);
-        final ImageButton hitbutton =  findViewById(R.id.hitButton);
+        final TextView enemyhealth = findViewById(R.id.enemyhealth);
+        final ImageButton hitbutton = findViewById(R.id.hitButton);
         final TextView cash = findViewById(R.id.cash);
         //final ImageButton marketbutton = findViewById(R.id.marketbutton);
         final TextView health = findViewById(R.id.hp);
@@ -97,7 +108,6 @@ public class MainActivity extends AppCompatActivity {
         c.setStory(c.getStory() + 1);
 
 
-
         explorebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -109,7 +119,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 switch (c.getStory()) {
-                    case 0: case 1: case 2: case 3: case 4: case 5:
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
                         storybox.setText(getStringResourceByName("story" + c.getStory()));
                         c.setStory(c.getStory() + 1);
                         break;
@@ -203,7 +218,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         hitbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -212,7 +226,7 @@ public class MainActivity extends AppCompatActivity {
                 health.setText(String.valueOf(c.getCurrenthealth()) + " / " + c.getMaxHealth());
                 hp2.setText(String.valueOf(c.getCurrenthealth()));
                 enemyhealth.setText(String.valueOf(e.getcurrentHealth()) + " / " + e.getmaxHealth());
-                if (c.getCurrenthealth() <= 0){
+                if (c.getCurrenthealth() <= 0) {
                     level2.setVisibility(View.VISIBLE);
                     level2.setText("You Lose, Reload last save?");
                     gobacktoexplore.setVisibility(View.VISIBLE);
@@ -225,7 +239,7 @@ public class MainActivity extends AppCompatActivity {
                     cash2.setText("Gold: " + String.valueOf(c.getMoney()));
                     cash.setText("Gold: " + String.valueOf(c.getMoney()));
                     c.setCurrentexp(c.getCurrentexp() + e.getexp());
-                    while(c.getCurrentexp() >= c.getexpCap()) {
+                    while (c.getCurrentexp() >= c.getexpCap()) {
                         enemyhealth.setText("You have gained a level");
                         c.setLevel(c.getLevel() + 1);
                         c.setStrength(c.getStrength() + 1);
@@ -252,7 +266,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
         innbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -269,9 +282,9 @@ public class MainActivity extends AppCompatActivity {
                 hutbutton.setVisibility(View.GONE);
 
                 goback.setVisibility(View.VISIBLE);
-                Toast toast= Toast.makeText(getApplicationContext(),
+                Toast toast = Toast.makeText(getApplicationContext(),
                         "Health Restored", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.TOP|Gravity.CENTER_HORIZONTAL, 0, 0);
+                toast.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
                 toast.show();
             }
         });
@@ -331,9 +344,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*
-        * Button clicks for Explore map
-        *
-        * */
+         * Button clicks for Explore map
+         *
+         * */
 
         forestbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -353,11 +366,74 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
+    public void signUpUser(String email, String password) {
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+    }
 
+    public void signInUser(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+
+                        // ...
+                    }
+                });
+    }
+
+    private void updateUI(FirebaseUser user) {
+        /**
+        hideProgressDialog();
+        if (user != null) {
+            mStatusTextView.setText(getString(R.string.emailpassword_status_fmt,
+                    user.getEmail(), user.isEmailVerified()));
+            mDetailTextView.setText(getString(R.string.firebase_status_fmt, user.getUid()));
+
+            findViewById(R.id.emailPasswordButtons).setVisibility(View.GONE);
+            findViewById(R.id.emailPasswordFields).setVisibility(View.GONE);
+            findViewById(R.id.signedInButtons).setVisibility(View.VISIBLE);
+
+            findViewById(R.id.verifyEmailButton).setEnabled(!user.isEmailVerified());
+        } else {
+            mStatusTextView.setText(R.string.signed_out);
+            mDetailTextView.setText(null);
+
+            findViewById(R.id.emailPasswordButtons).setVisibility(View.VISIBLE);
+            findViewById(R.id.emailPasswordFields).setVisibility(View.VISIBLE);
+            findViewById(R.id.signedInButtons).setVisibility(View.GONE);
+        }*/
+    }
 
     private String getStringResourceByName(String aString) {
         String packageName = getPackageName();
